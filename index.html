@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Casino</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="app">
+        <header class="top-bar">
+            <div class="logo">🎰 Mini Casino</div>
+            <div class="top-right">
+                <button id="themeToggle" class="theme-btn">🌓</button>
+                <div class="user-chip" id="userChip">Гость</div>
+            </div>
+        </header>
+
+        <main class="layout">
+            <section class="panel panel-left">
+                <h2>Мины</h2>
+                <div class="field">
+                    <label>Количество бомб</label>
+                    <select id="bombs">
+                        <option value="3">3</option>
+                        <option value="5">5</option>
+                        <option value="7">7</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Ставка</label>
+                    <div class="bet-row">
+                        <input id="amount" type="number" min="1" step="1" value="10" />
+                        <div class="bet-buttons">
+                            <button data-act="min">Min</button>
+                            <button data-act="x2">x2</button>
+                            <button data-act="max">Max</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label>Баланс</label>
+                    <div class="balance" id="balance">0.00 M</div>
+                </div>
+
+                <button id="playBtn" class="primary-btn">🚀 Начать игру</button>
+
+                <div class="result-row">
+                    <div class="result-block">
+                        <span class="label">Последний выигрыш</span>
+                        <span class="value" id="lastWin">0.00 M</span>
+                    </div>
+                    <div class="result-block">
+                        <span class="label">Множитель</span>
+                        <span class="value" id="lastMult">1.00 X</span>
+                    </div>
+                </div>
+
+                <div class="hint">
+                    💡 Баланс и ставки общие с ботом. Открывай мини‑аппу из Telegram.
+                </div>
+            </section>
+
+            <section class="panel panel-right">
+                <div class="grid" id="grid"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
